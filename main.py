@@ -30,6 +30,9 @@ class TimerLayout(BoxLayout):
             self.expired = False
         else:
             self.running = not self.running
+    def set_time(self, newtime):
+        if newtime.isdigit():
+            self.timeLeft = int(newtime)
 
     # Taeller ned hvis running. Opdaterer buttonText ved hvert kald
     def update(self, dt):
@@ -51,7 +54,7 @@ class TimerLayout(BoxLayout):
 class BasicTimerApp(App):
 
     def build(self):
-        # Initialiser knappen
+        # Initialiser layoutet
         layout = TimerLayout()
 
         # Bed Kivy om at kalde update() 30 gange pr. sekund
