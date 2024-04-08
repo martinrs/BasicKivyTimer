@@ -3,6 +3,11 @@
 <TimerLayout>:
 	orientation: 'vertical'
 	Label:
+	    text: 'Martins fjong timer'
+	    font_size: self.height * 0.4
+	    size_hint_y: None # Sæt size_hint_y til None for at tillade manuel størrelse nedenfor
+	    size_y: 100
+	Label:
 	    color: (0, 1, 0, 1)
 		text: root.timerText
 		font_size: self.height * 0.5
@@ -14,6 +19,7 @@
 	    orientation: 'horizontal'
 	    TextInput:
 	        id: setting
+	        font_size: self.height * 0.7
 	    Button:
 	        text: 'Set'
 	        on_release:

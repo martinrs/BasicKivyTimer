@@ -1,4 +1,6 @@
 from kivy.app import App
+import requests
+from kivy.uix.image import Image
 
 # Grafiske komponenter
 from kivy.uix.boxlayout import BoxLayout
@@ -51,12 +53,16 @@ class TimerLayout(BoxLayout):
         else:
             self.buttonText = 'Reset'
 
+    def get_image(self, url_string):
+        resp = requests.get(url_string, verify=False)
+        return resp.content
+        #return Image(resp.)
+
 class BasicTimerApp(App):
 
     def build(self):
         # Initialiser layoutet
         layout = TimerLayout()
-
         # Bed Kivy om at kalde update() 30 gange pr. sekund
         Clock.schedule_interval(layout.update, 1.0/30.0)
 
