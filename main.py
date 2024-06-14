@@ -31,14 +31,18 @@ class TimerLayout(BoxLayout):
 
     # Taeller ned hvis running. Opdaterer buttonText ved hvert kald
     def update(self, dt):
+        # Opdater tid tilbage, hvis timer kører.
         if self.running:
             self.timeLeft = self.timeLeft - dt
+        # Stop tiden, hvis den er nået 0 (eller mindre)
         if self.timeLeft <= 0 and self.running:
             self.toggle()
             self.expired = True
 
+        # Opdater teksten på skærmen via StringProperty
         self.timerText = str(math.ceil(self.timeLeft))
 
+        # Sæt teksten på knappen afhængig af timerens tilstand
         if self.running and not self.expired:
             self.buttonText = 'Stop'
         elif not self.running and not self.expired:
@@ -57,5 +61,6 @@ class BasicTimerApp(App):
 
         return layout
 
+# Kør appen
 if __name__ in ('__main__', '__android__'):
     BasicTimerApp().run()
