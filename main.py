@@ -2,8 +2,6 @@ from kivy.app import App
 
 # Grafiske komponenter
 from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.button import Button
-from kivy.uix.label import Label
 
 # Properties til interaktion mellem python og kv
 from kivy.properties import StringProperty
