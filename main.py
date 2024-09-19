@@ -18,7 +18,7 @@ class TimerLayout(BoxLayout):
     buttonText = StringProperty('Start timer')
     running = False        # Nedtaellingen koerer hvis sand
     expired = False
-    startTime = 5          # Antal sekunder timeren starter på
+    startTime = 3          # Antal sekunder timeren starter på
     timeLeft = startTime   # Antal sekunder tilbage i nedtaellingen
 
     # Skifter running til modsatte boolske vaerdi
